@@ -5,15 +5,13 @@ A part from the apps that have to be installed manually listed below, everything
 
 
 ## Done manually
- * [Firefox](https://www.mozilla.org/en-US/firefox/new/)
- * [Keybase](https://keybase.io/docs/the_app/install_macos)
  * [Docker](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 
 ### Firefox
 All the plugin are automatically installed as soon as the Firefox Sync service is activated. 
 
 ### Docker
-I have moved the location of the image for docker into `/Volumes/Giova/Docker`. Hope this will help keeping the insync backup lightweight.
+I have moved the location of the image for docker into `/Volumes/Scratch/Docker`. Hope this will help keeping the insync backup lightweight.
 
 ### GitX 
 Is not working because it was never compiled for 64bit only systems. **Need to find an alternative!**
