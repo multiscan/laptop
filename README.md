@@ -20,10 +20,39 @@ I have moved the location of the image for docker into `/Volumes/Scratch/Docker`
 Is not working because it was never compiled for 64bit only systems. **Need to find an alternative!**
 
 
+## Notes
+
+#### Mail
+The directory where Apple Mail stores data (`~/Library/Mail`) cannot be touched. 
+I tried to move or rename it but I get a _permission denied_ even as sudo! 
+Fuck You Apple!
+Luckily, it is excluded from Druva backup so I can use it also for private gmail account. 
+The alternative is to switch to Thunderbird. 
+
+#### Keybase
+I had some issues in making Keybase KBFS work. After few attempts (not clear why) it could mount into `/Volumes/Keybase` but not create the magic `/keybase` mount. It is not clear if the key was to reboot or something else like starting keybase while keeping security pane in system preferences unlocked. 
+
+The root filesystem of OsX 10.15 is readonly. Therefore keybase cannot write the `/keybase` directory. 
+There is a [way to make it writable][8] though: 
+
+  1. Reboot into Recovery Mode holding down Command+R until the Apple logo appears on your screen;
+  2. `csrutil disable`;
+  3. Restart your Mac;
+  4. Happily write on your root filesystem;
+  5. repeat with `csrutil enable`.
+
+For the moment I have simply created a symlink but this will require changing all the scripts:
+
+```
+ln -s "/Volumes/Keybase ($(whoami))"   $HOME/keybase
+```
+
+
 ## TODO:
  - [ ] Get rid of rcm before running 'local.sh'
  - [ ] Docker Community Edition as cask instead of manually!
  - [ ] Find an alternative to GitX
+ 
 
 ## LINKS
  - [Thoughtbot laptop][1]
@@ -35,7 +64,9 @@ Is not working because it was never compiled for 64bit only systems. **Need to f
 
 [1]: https://github.com/thoughtbot/laptop
 [2]: https://github.com/thoughtbot/rcm
-[2]: https://brew.sh/
+[3]: https://brew.sh/
 [4]: https://formulae.brew.sh/formula/
 [5]: https://formulae.brew.sh/cask/
 [6]: https://hub.docker.com/editions/community/docker-ce-desktop-mac
+[7]: https://forums.developer.apple.com/thread/119790)
+[8]: https://lifehacker.com/how-to-fix-os-x-el-capitans-annoyances-1733836821

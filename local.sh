@@ -63,6 +63,7 @@ ensure_cask shiftit
 ensure_cask spotify
 ensure_cask sublime-text
 ensure_cask telegram
+ensure_cask thunderbird
 ensure_cask tigervnc-viewer
 ensure_cask virtualbox                 # Requires manual intervention in System Security
 ensure_cask virtualbox-extension-pack
