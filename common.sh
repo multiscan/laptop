@@ -13,7 +13,7 @@ ensure_brew() {
   if egrep -q "^$p\$"  $cf ; then
     echo "$p already installed"
   else
-    brew install -y $p
+    brew install $p
     brew list -1 > $cf
   fi
 }
