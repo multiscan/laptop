@@ -68,5 +68,5 @@ ln -s "/Volumes/Keybase ($(whoami))"   $HOME/keybase
 [4]: https://formulae.brew.sh/formula/
 [5]: https://formulae.brew.sh/cask/
 [6]: https://hub.docker.com/editions/community/docker-ce-desktop-mac
-[7]: https://forums.developer.apple.com/thread/119790)
+[7]: https://forums.developer.apple.com/thread/119790
 [8]: https://lifehacker.com/how-to-fix-os-x-el-capitans-annoyances-1733836821
