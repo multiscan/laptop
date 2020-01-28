@@ -21,6 +21,7 @@ Is not working because it was never compiled for 64bit only systems. **Need to f
 
 
 ### TODO:
- [ ] Get rid of rcm before running 'local.sh'
- [ ] Docker Community Edition as cask instead of manually!
+ - [ ] Get rid of rcm before running 'local.sh'
+ - [ ] Docker Community Edition as cask instead of manually!
+ - [ ] Find an alternative to GitX
 
