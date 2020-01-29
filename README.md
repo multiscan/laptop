@@ -7,8 +7,9 @@ A part from the apps that have to be installed manually listed below, everything
 Most of the `dotfiles` are from [thoughtbot rcm][2] or slightly modified. 
 
 ## Done manually
+ * Enable root user: `Directory Utility -> Unlock -> Edit menu(Enable Root User)`
  * [Docker CE Desktop][6] this also exists  as a `cask` but I was not sure which one to take...
-
+ * Enable mounting into `/keybase` for Keybase (see below);
 
 #### Firefox
 All the plugin are automatically installed as soon as the Firefox Sync service is activated. 
@@ -30,6 +31,17 @@ Luckily, it is excluded from Druva backup so I can use it also for private gmail
 The alternative is to switch to Thunderbird. 
 
 #### Keybase
+Working solution found [here][9] is to run the following command and reboot
+```
+ grep -q keybase /etc/synthetic.conf || echo keybase >> /etc/synthetic.conf
+```
+
+The only issue is that it have to be issued by root: admin user with `sudo` is not enough. 
+
+#### Alternative (discarded) solution
+
+I keep this because it might be useful in other situations
+
 I had some issues in making Keybase KBFS work. After few attempts (not clear why) it could mount into `/Volumes/Keybase` but not create the magic `/keybase` mount. It is not clear if the key was to reboot or something else like starting keybase while keeping security pane in system preferences unlocked. 
 
 The root filesystem of OsX 10.15 is readonly. Therefore keybase cannot write the `/keybase` directory. 
@@ -38,21 +50,14 @@ There is a [way to make it writable][8] though:
   1. Reboot into Recovery Mode holding down Command+R until the Apple logo appears on your screen;
   2. `csrutil disable`;
   3. Restart your Mac;
-  4. Happily write on your root filesystem;
+  4. Happily write on your root filesystem: in this particular case a symlink from `/keybase` to `/Volumes/Keybase` or just `/keybase` as a directory);
   5. repeat with `csrutil enable`.
-
-For the moment I have simply created a symlink but this will require changing all the scripts:
-
-```
-ln -s "/Volumes/Keybase ($(whoami))"   $HOME/keybase
-```
-
 
 ## TODO:
  - [ ] Get rid of rcm before running 'local.sh'
  - [ ] Docker Community Edition as cask instead of manually!
  - [ ] Find an alternative to GitX
- 
+ - [ ] Check if it is possible to make `sudo` equivalent to user root. 
 
 ## LINKS
  - [Thoughtbot laptop][1]
@@ -70,3 +75,4 @@ ln -s "/Volumes/Keybase ($(whoami))"   $HOME/keybase
 [6]: https://hub.docker.com/editions/community/docker-ce-desktop-mac
 [7]: https://forums.developer.apple.com/thread/119790
 [8]: https://lifehacker.com/how-to-fix-os-x-el-capitans-annoyances-1733836821
+[9]: https://github.com/keybase/client/issues/14689
