@@ -37,4 +37,6 @@ _load_settings "$HOME/.dotfiles/zsh/configs"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-export PATH="$HOME/bin:$PATH"
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh 
+
+export PATH="$HOME/bin:/usr/local/bin:$PATH"

@@ -8,15 +8,6 @@ fi
 
 . common.sh
 
-if [ ! -L ~/.dotfiles ] ; then
-  ln -s $CASA/dotfiles ~/.dotfiles
-fi
-
-for f in zshrc zshenv aliases vimrc tmux.conf gitconfig gitignore gemrc ; do 
-	if [ ! -L ~/.$f ] ; then
-		ln -s ~/.dotfiles/$f ~/.$f
-	fi
-done
 
 if [ ! -L $HOME/bin/sute ] ; then
   ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/sute
@@ -24,6 +15,7 @@ fi
 
 # --------------------------- Brew packages
 ensure_brew pandoc
+ensure_brew wget
 
 # --------------------------- Applications
 # ensure_cask airflow
@@ -42,6 +34,7 @@ ensure_cask colloquy
 ensure_cask discord
 ensure_cask drawio
 ensure_cask firefox
+ensure_cask fork
 ensure_cask handbrake
 ensure_cask idagio
 ensure_cask keybase

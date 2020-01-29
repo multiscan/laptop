@@ -1,14 +1,16 @@
 # Mac Laptop installation
 
-A part from the apps that have to be installed manually listed below, everything should be installed and configured via the `go.sh` script in this directory. The script is idempotent and makes eavy use of the [laptop script][1] by Thoughbot. Most of the things are done via [brew][3]
+A part from the apps that have to be installed manually listed below, everything should be installed and configured via the `go.sh` script in this directory. The script is idempotent and is heavily based on the [laptop script][1] by Thoughbot. Most of the things are done via [brew][3]
 
 `go.sh` should be executed only once. Then `local.sh` should be enough as all modifications goes therein.
 
 Most of the `dotfiles` are from [thoughtbot rcm][2] or slightly modified. 
 
 ## Done manually
+ * Created two extra volumes: `/Volumes/Scratch` and `/Volumes/Priv`
  * Enable root user: `Directory Utility -> Unlock -> Edit menu(Enable Root User)`
  * [Docker CE Desktop][6] this also exists  as a `cask` but I was not sure which one to take...
+ * Executed this `go.sh` script (of course!)
  * Enable mounting into `/keybase` for Keybase (see below);
 
 #### Firefox
@@ -56,7 +58,7 @@ There is a [way to make it writable][8] though:
 ## TODO:
  - [ ] Get rid of rcm before running 'local.sh'
  - [ ] Docker Community Edition as cask instead of manually!
- - [ ] Find an alternative to GitX
+ - [X] Find an alternative to GitX. Looks like Fork is a very good, even better alternative.
  - [ ] Check if it is possible to make `sudo` equivalent to user root. 
 
 ## LINKS
@@ -66,6 +68,7 @@ There is a [way to make it writable][8] though:
  - [Brew formula list][4]
  - [Brew cask list][5]
  - [Docker CE Desktop][6]
+ - [asdf][10] plugins: [ruby][11], [python][12], [nodejs][13]
 
 [1]: https://github.com/thoughtbot/laptop
 [2]: https://github.com/thoughtbot/rcm
@@ -76,3 +79,7 @@ There is a [way to make it writable][8] though:
 [7]: https://forums.developer.apple.com/thread/119790
 [8]: https://lifehacker.com/how-to-fix-os-x-el-capitans-annoyances-1733836821
 [9]: https://github.com/keybase/client/issues/14689
+[10]: https://github.com/asdf-vm/asdf
+[11]: https://github.com/asdf-vm/asdf-ruby
+[12]: https://github.com/danhper/asdf-python
+[13]: https://github.com/asdf-vm/asdf-nodejs
