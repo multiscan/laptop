@@ -7,12 +7,16 @@ A part from the apps that have to be installed manually listed below, everything
 Most of the `dotfiles` are from [thoughtbot rcm][2] or slightly modified. 
 
 ## Done manually
- * Created two extra volumes: `/Volumes/Scratch` and `/Volumes/Priv`
+ * Created three extra volumes (this zfs-like volume system is cool):
+   1. `/Volumes/Scratch`: for volatile data that I will not backup (e.g. docker images, temp files);
+   2. `/Volumes/Priv`: my private stuff that I will backup frequently;
+   3. `/Volumes/Archive`: old stuff mostly read-only. No need to backup frequently.
+   For the moment volumes are not port of the mandatory Druva inSync backup. Hope it stays like this.
  * Enable root user: `Directory Utility -> Unlock -> Edit menu(Enable Root User)`
  * [Docker CE Desktop][6] this also exists  as a `cask` but I was not sure which one to take...
  * Executed this `go.sh` script (of course!)
  * Enable mounting into `/keybase` for Keybase (see below);
-
+ 
 #### Firefox
 All the plugin are automatically installed as soon as the Firefox Sync service is activated. 
 

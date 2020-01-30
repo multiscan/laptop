@@ -39,4 +39,6 @@ _load_settings "$HOME/.dotfiles/zsh/configs"
 
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh 
 
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local 
+
 export PATH="$HOME/bin:/usr/local/bin:$PATH"

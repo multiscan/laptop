@@ -62,3 +62,23 @@ ensure_cask virtualbox                 # Requires manual intervention in System 
 ensure_cask virtualbox-extension-pack
 ensure_cask visual-studio-code
 ensure_cask vlc
+
+# Sublime Text 3 packages:
+stp="$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+stc="$HOME/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings"
+if [ ! -f "$stp" ] ; then
+  git clone https://packagecontrol.io/Package%20Control.sublime-package "$stp"
+  cat > "$stc" <<-__EOF
+	{
+		"installed_packages":
+		[
+			"BracketHighlighter",
+			"Dockerfile Syntax Highlighting",
+			"GitGutter",
+			"PlainTasks",
+			"SublimeCodeIntel",
+			"SublimeLinter",
+			"TerminalView"
+		]
+	}
+__EOF

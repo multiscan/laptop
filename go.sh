@@ -32,7 +32,7 @@ if [ ! -L ~/.dotfiles ] ; then
   ln -s $CASA/dotfiles ~/.dotfiles
 fi
 
-for f in zshrc zshenv aliases vimrc tmux.conf gitconfig gitignore gemrc ; do 
+for f in aliases gemrc  gitconfig gitignore tmux.conf vim vimrc zshrc zshenv ; do 
 	if [ ! -L ~/.$f ] ; then
 		ln -s ~/.dotfiles/$f ~/.$f
 	fi
