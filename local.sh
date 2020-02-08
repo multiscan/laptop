@@ -15,6 +15,7 @@ fi
 
 # --------------------------- Brew packages
 ensure_brew pandoc
+ensure_brew jsonnet
 ensure_brew wget
 
 # --------------------------- Applications
@@ -35,6 +36,7 @@ ensure_cask discord
 ensure_cask drawio
 ensure_cask firefox
 ensure_cask fork
+ensure_cask google-chrome
 ensure_cask handbrake
 ensure_cask idagio
 ensure_cask keybase
@@ -62,6 +64,7 @@ ensure_cask virtualbox                 # Requires manual intervention in System 
 ensure_cask virtualbox-extension-pack
 ensure_cask visual-studio-code
 ensure_cask vlc
+ensure_cask xquartz
 
 # Sublime Text 3 packages:
 stp="$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
