@@ -16,7 +16,9 @@ fi
 # --------------------------- Brew packages
 ensure_brew pandoc
 ensure_brew jsonnet
+ensure_brew telnet
 ensure_brew wget
+ensure_brew youtube-dl
 
 # --------------------------- Applications
 # ensure_cask airflow
