@@ -13,9 +13,17 @@ if [ ! -L $HOME/bin/sute ] ; then
   ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/sute
 fi
 
+if [ ! -L $HOME/.npm ] ; then
+  [ -d /Volumes/Scratch/npm ] || mkdir -p /Volumes/Scratch/npm
+  ln -s /Volumes/Scratch/npm $HOME/.npm
+fi
+
 # --------------------------- Brew packages
 ensure_brew pandoc
+ensure_brew gnuplot
 ensure_brew jsonnet
+ensure_brew jq
+ensure_brew openshift-cli
 ensure_brew telnet
 ensure_brew wget
 ensure_brew youtube-dl
@@ -34,6 +42,7 @@ ensure_cask chromium
 ensure_cask colloquy
 # ensure_cask color-oracle
 # ensure_cask dia
+# ensure_cask darktable
 ensure_cask discord
 ensure_cask drawio
 ensure_cask firefox
