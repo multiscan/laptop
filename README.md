@@ -59,6 +59,24 @@ There is a [way to make it writable][8] though:
   4. Happily write on your root filesystem: in this particular case a symlink from `/keybase` to `/Volumes/Keybase` or just `/keybase` as a directory);
   5. repeat with `csrutil enable`.
 
+#### TM disk keeps running all the time
+This is due to the fact that spotlight is indexing it for some insane apple idea. Unfortunatelly this seams to be [impossible to turn off][14]:
+
+```
+% sudo mdutil -i off /Volumes/wdeTM 
+Password:
+/System/Volumes/Data/Volumes/wdeTM:
+2020-03-25 09:26:23.167 mdutil[77741:7287780] mdutil disabling Spotlight: /System/Volumes/Data/Volumes/wdeTM -> kMDConfigSearchLevelFSSearchOnly
+	Indexing enabled. (Indexing level may not be changed on volumes which have a Time Machine backup)
+playground % sudo mdutil -s /Volumes/wdeTM 
+/System/Volumes/Data/Volumes/wdeTM:
+	Indexing enabled. 
+```
+
+Thank and f**k you Apple!
+
+ 
+
 ## TODO:
  - [ ] Get rid of rcm before running 'local.sh'
  - [ ] Docker Community Edition as cask instead of manually!
@@ -87,3 +105,4 @@ There is a [way to make it writable][8] though:
 [11]: https://github.com/asdf-vm/asdf-ruby
 [12]: https://github.com/danhper/asdf-python
 [13]: https://github.com/asdf-vm/asdf-nodejs
+[14]: https://mjtsai.com/blog/2017/10/19/you-cant-turn-off-spotlight-on-your-time-machine-backup/
