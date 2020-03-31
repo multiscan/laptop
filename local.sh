@@ -19,11 +19,12 @@ if [ ! -L $HOME/.npm ] ; then
 fi
 
 # --------------------------- Brew packages
-ensure_brew pandoc
+ensure_brew blackbox
 ensure_brew gnuplot
 ensure_brew jsonnet
 ensure_brew jq
 ensure_brew openshift-cli
+ensure_brew pandoc
 ensure_brew telnet
 ensure_brew wget
 ensure_brew youtube-dl
