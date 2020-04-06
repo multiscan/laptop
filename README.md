@@ -91,6 +91,8 @@ Thank and f**k you Apple!
  - [Brew cask list][5]
  - [Docker CE Desktop][6]
  - [asdf][10] plugins: [ruby][11], [python][12], [nodejs][13]
+ - [Improve Time Machine performance on network drives][15]
+ - [restic][16] and restic [cryptography analysis][17]
 
 [1]: https://github.com/thoughtbot/laptop
 [2]: https://github.com/thoughtbot/rcm
@@ -106,3 +108,6 @@ Thank and f**k you Apple!
 [12]: https://github.com/danhper/asdf-python
 [13]: https://github.com/asdf-vm/asdf-nodejs
 [14]: https://mjtsai.com/blog/2017/10/19/you-cant-turn-off-spotlight-on-your-time-machine-backup/
+[15]: https://edoardofederici.com/improve-time-machine-performance/
+[16]: https://restic.readthedocs.io/en/latest/index.html
+[17]: https://blog.filippo.io/restic-cryptography/
