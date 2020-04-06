@@ -25,6 +25,7 @@ ensure_brew jsonnet
 ensure_brew jq
 ensure_brew openshift-cli
 ensure_brew pandoc
+ensure_brew restic
 ensure_brew telnet
 ensure_brew wget
 ensure_brew youtube-dl
