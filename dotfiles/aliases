@@ -14,3 +14,15 @@ alias s="rspec"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
+
+# Git pull by Nicolas
+# https://superuser.com/a/1486681
+git_pull_rebase_fn() {
+    echo -n "Want to use 'git pull --rebase' [y/n] ? "
+    read REPLY
+    case $REPLY in
+      [Yy]) echo 'git pull --rebase' && git pull --rebase ;;
+      [Nn]) echo 'git pull --no-rebase' && git pull --no-rebase ;;
+    esac
+}
+git() { if [[ $@ == "pull" ]]; then git_pull_rebase_fn; else command git "$@"; fi; }

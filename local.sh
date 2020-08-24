@@ -21,6 +21,7 @@ fi
 # --------------------------- Brew packages
 ensure_brew blackbox
 ensure_brew gnuplot
+ensure_brew joplin
 ensure_brew jsonnet
 ensure_brew jq
 ensure_brew openshift-cli
@@ -32,6 +33,7 @@ ensure_brew youtube-dl
 
 # --------------------------- Applications
 # ensure_cask airflow
+ensure_cask android-file-transfer
 ensure_cask arduino
 ensure_cask aquaterm
 ensure_cask atom
@@ -77,6 +79,7 @@ ensure_cask virtualbox                 # Requires manual intervention in System 
 ensure_cask virtualbox-extension-pack
 ensure_cask visual-studio-code
 ensure_cask vlc
+ensure_cask vscodium
 ensure_cask xquartz
 
 # Sublime Text 3 packages:
@@ -98,3 +101,13 @@ if [ ! -f "$stp" ] ; then
 		]
 	}
 __EOF
+
+
+# Get rid of Adobe power consuming shit
+launchctl unload -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
+
+
+
+
+
+

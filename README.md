@@ -16,6 +16,8 @@ Most of the `dotfiles` are from [thoughtbot rcm][2] or slightly modified.
  * [Docker CE Desktop][6] this also exists  as a `cask` but I was not sure which one to take...
  * Executed this `go.sh` script (of course!)
  * Enable mounting into `/keybase` for Keybase (see below);
+ * Installed Acrobat Reader as cask is not available
+
  
 #### Firefox
 All the plugin are automatically installed as soon as the Firefox Sync service is activated. 
@@ -75,6 +77,48 @@ playground % sudo mdutil -s /Volumes/wdeTM
 
 Thank and f**k you Apple!
 
+
+#### Launchctl crush course
+
+From an [answer on stack exchange][chiggsy]:
+
+`launchctl` has changed for the better in 10.11.4
+
+Type the command without arguments to get the help. You'll see new domains to search and new commands.
+
+```
+launchctl print system     #prints the system domain (root)
+launchctl print system/com.system.service     #prints details about a service in roots domain.
+```
+
+For your processes: if it's not in the system domain it's probably in your user:
+
+```
+launchctl print user/(your uid)/
+launchctl print user/(your uid)/com.user.agent
+```
+
+However, since you'll be logged into the gui:
+
+```
+launchctl print gui/(your uid)/
+launchctl print gui/(your uid)/org.adobe.NSAmonitor # or whatever they call what you are looking for
+```
+
+ - Gui domain for things that have a UI/Agents
+ - User domain for daemons for you.
+ - System domain for system daemons.
+
+There are a couple more but I find user and gui are pretty good.
+
+The trick with later versions of OSX is to check the man page and then run the tool help. If it's running, you can find it with launchctl.
+
+```
+man launchctl
+launchctl -h
+```
+
+
  
 
 ## TODO:
@@ -93,6 +137,7 @@ Thank and f**k you Apple!
  - [asdf][10] plugins: [ruby][11], [python][12], [nodejs][13]
  - [Improve Time Machine performance on network drives][15]
  - [restic][16] and restic [cryptography analysis][17]
+ - [kickstart][18] command for managing remote management preferences
 
 [1]: https://github.com/thoughtbot/laptop
 [2]: https://github.com/thoughtbot/rcm
@@ -111,3 +156,6 @@ Thank and f**k you Apple!
 [15]: https://edoardofederici.com/improve-time-machine-performance/
 [16]: https://restic.readthedocs.io/en/latest/index.html
 [17]: https://blog.filippo.io/restic-cryptography/
+[18]: https://support.apple.com/en-us/HT201710
+[chiggsy]: https://apple.stackexchange.com/questions/236577/how-to-disable-adobe-core-sync-app-on-os-x-from-being-launched-automatically/237585#answer-237399
+
