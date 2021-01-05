@@ -20,16 +20,20 @@ fi
 
 # --------------------------- Brew packages
 ensure_brew blackbox
+ensure_brew cmake
 ensure_brew gnuplot
+ensure_brew gnu-tar
 ensure_brew joplin
 ensure_brew jsonnet
 ensure_brew jq
+ensure_brew just
 ensure_brew openshift-cli
 ensure_brew pandoc
 ensure_brew restic
 ensure_brew telnet
 ensure_brew wget
 ensure_brew youtube-dl
+ensure_brew openjdk
 
 # --------------------------- Applications
 # ensure_cask airflow
@@ -37,6 +41,7 @@ ensure_cask android-file-transfer
 ensure_cask arduino
 ensure_cask aquaterm
 ensure_cask atom
+ensure_cask balenaetcher               # for writing raspi images to flash
 ensure_cask basecamp
 ensure_cask bean                       # Simple rtf text editor
 ensure_cask calibre
@@ -81,6 +86,7 @@ ensure_cask visual-studio-code
 ensure_cask vlc
 ensure_cask vscodium
 ensure_cask xquartz
+ensure_cask Zettlr
 
 # Sublime Text 3 packages:
 stp="$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
