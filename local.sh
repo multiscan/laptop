@@ -19,21 +19,26 @@ if [ ! -L $HOME/.npm ] ; then
 fi
 
 # --------------------------- Brew packages
+brew tap homebrew-ffmpeg/ffmpeg
+ensure_brew homebrew-ffmpeg/ffmpeg/ffmpeg --with-fdk-aac
 ensure_brew blackbox
 ensure_brew cmake
 ensure_brew gnuplot
 ensure_brew gnu-tar
+ensure_brew gnu-sed
 ensure_brew joplin
 ensure_brew jsonnet
 ensure_brew jq
 ensure_brew just
+ensure_brew openjdk
 ensure_brew openshift-cli
 ensure_brew pandoc
 ensure_brew restic
+ensure_brew rust
+ensure_brew starship
 ensure_brew telnet
 ensure_brew wget
 ensure_brew youtube-dl
-ensure_brew openjdk
 
 # --------------------------- Applications
 # ensure_cask airflow
@@ -74,6 +79,7 @@ ensure_cask osxfuse
 ensure_cask pencil
 ensure_cask postman
 ensure_cask sequel-pro                 # SQL client
+ensure_cask signal
 ensure_cask shiftit
 ensure_cask spotify
 ensure_cask sublime-text

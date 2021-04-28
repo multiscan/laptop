@@ -2,3 +2,10 @@
 /laptop.log
 /cache
 /dotfiles.rcm
+/dotfiles/config/configstore
+/dotfiles/config/darktable
+/dotfiles/config/filezilla
+/dotfiles/config/gtk-2.0
+/dotfiles/config/joplin
+/dotfiles/config/joplin-desktop
+/dotfiles/config/sonic-pi.net

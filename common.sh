@@ -16,7 +16,7 @@ ensure_brew() {
   if egrep -q "^$p\$"  $cf ; then
     echo "$p already installed"
   else
-    brew install $p
+    brew install $*
     brew list -1 > $cf
   fi
 }
@@ -29,7 +29,7 @@ ensure_cask() {
   if egrep -q "^$p\$"  $cf ; then
     echo "$p already installed"
   else
-    brew cask install $p
+    brew cask install $*
     brew cask list -1 > $cf
   fi
 }

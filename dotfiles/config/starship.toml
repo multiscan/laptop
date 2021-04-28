@@ -1,0 +1,46 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+# [character]                            # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+[docker]
+format = "[$symbol($version )]($style)"
+
+[git_status]
+format = "$all_status$ahead_behind"
+
+
+[golang]
+format = "[$symbol($version )]($style)"
+
+[java]
+format = "[$symbol($version )]($style)"
+
+[julia]
+format = "[$symbol$version]($style) "
+symbol = "ஃ "
+style = "bold green"
+
+[php]
+format = "[$symbol($version )]($style)"
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'
+detect_files = [".tool-versions", ".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+style = "bold green"
+
+[ruby]
+detect_files = ["Gemfile", ".ruby-version", ".tool-versions"]
+format = "[$symbol($version )]($style)"
+
+[rust]
+format = "[$symbol($version )]($style)"
+
+[username]
+disabled = true
+
+[vagrant]
+format = "[$symbol($version )]($style)"
+
